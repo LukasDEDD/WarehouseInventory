@@ -15,8 +15,8 @@ public class ArrayField {
 
         for (int hodnota : primeStock) {
             soucet += hodnota; }
-        System.out.println( "Celkovy pocet kusu na sklade je: " + soucet );
 
+        System.out.println( "Celkovy pocet kusu na sklade je: " + soucet );
 
     }
 }
