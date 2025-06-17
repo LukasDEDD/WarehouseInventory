@@ -18,6 +18,5 @@ public class ArrayField {
         System.out.println( "Celkovy pocet kusu na sklade je: " + soucet );
 
 
-
     }
 }
