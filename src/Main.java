@@ -15,6 +15,7 @@ public class Main {
 
         System.out.println(" Na sklade jsou tyto polozky : "+ stock );
 
+        ArrayListStock.findProduct(stock, "monitor");
 
     }
 }

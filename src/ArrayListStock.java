@@ -38,6 +38,35 @@ public class ArrayListStock {
         return nameMys;
     }
 
+    public ArrayListStock(String nameLaptop, String nameTelefon, String nameMonitor, String nameKlavesnice, String nameMys) {
+        this.nameLaptop = nameLaptop;
+        this.nameTelefon = nameTelefon;
+        this.nameMonitor = nameMonitor;
+        this.nameKlavesnice = nameKlavesnice;
+        this.nameMys = nameMys;
+
+    }
+
+    public static void findProduct(List<ArrayListStock> stock, String hledanyProdukt) {
+        boolean found = false;
+
+        for (int i = 0; i < stock.size(); i++) {
+            ArrayListStock produkt = stock.get(i);
+            String allValues = produkt.toString().toLowerCase();
+
+            if (allValues.contains(hledanyProdukt.toLowerCase())) {
+                System.out.println("Produkt \"" + hledanyProdukt + "\" se nachází na pozici " + (i + 1) + " v seznamu.");
+                found = true;
+                break;
+            }
+        }
+
+        if (!found) {
+            System.out.println("Produkt \"" + hledanyProdukt + "\" není na skladě.");
+        }
+    }
+
+
     @Override
     public String toString() {
         List<String> parts = new ArrayList<>();
@@ -50,18 +79,9 @@ public class ArrayListStock {
         if (Sluchatka != null) parts.add(Sluchatka);
 
         return String.join(", ", parts);
-    }
-
-
-    public ArrayListStock(String nameLaptop, String nameTelefon, String nameMonitor, String nameKlavesnice, String nameMys) {
-        this.nameLaptop = nameLaptop;
-        this.nameTelefon = nameTelefon;
-        this.nameMonitor = nameMonitor;
-        this.nameKlavesnice = nameKlavesnice;
-        this.nameMys = nameMys;
-
-
 
 
     }
+
 }
+
