@@ -12,12 +12,12 @@ public class ArrayListStock {
 
     private int[] stockLevels;  // <- pole s počty kusů
 
-    public ArrayListStock(String nameLaptop, String nameTelefon, String nameMonitor, String nameKlavesnice, String nameMys) {
-        this.laptop = nameLaptop;
-        this.telefon = nameTelefon;
-        this.monitor = nameMonitor;
+    public ArrayListStock(String Laptop, String telefon, String monitor, String nameKlavesnice, String mys) {
+        this.laptop = Laptop;
+        this.telefon = telefon;
+        this.monitor = monitor;
         this.klavesnice = nameKlavesnice;
-        this.mys = nameMys;
+        this.mys = mys;
 
         this.stockLevels = new int[5];
     }
