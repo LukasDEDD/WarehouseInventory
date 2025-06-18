@@ -13,9 +13,25 @@ public class Main {
         stock.add(productNames);
         stock.add(item);
 
-        System.out.println(" Na sklade jsou tyto polozky : "+ stock );
-
+        vypisProduktySeZarazenim(stock);
         ArrayListStock.findProduct(stock, "monitor");
 
     }
-}
+
+        public static void vypisProduktySeZarazenim (List < ArrayListStock > stock) {
+            int pozice = 1;
+            for (ArrayListStock polozka : stock) {
+                List<String> produkty = polozka.getAllProducts();
+                for (String produkt : produkty) {
+                    System.out.println("Produkt na pozici " + pozice + " je " + produkt);
+                    pozice++;
+                }
+
+
+
+
+
+
+            }
+        }
+    }
