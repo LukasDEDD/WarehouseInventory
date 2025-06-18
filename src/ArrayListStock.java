@@ -3,21 +3,21 @@ import java.util.List;
 
 public class ArrayListStock {
 
-    private String nameLaptop;
-    private String nameTelefon;
-    private String nameMonitor;
-    private String nameKlavesnice;
-    private String nameMys;
+    private String laptop;
+    private String telefon;
+    private String monitor;
+    private String klavesnice;
+    private String mys;
     private String sluchatka;
 
     private int[] stockLevels;  // <- pole s počty kusů
 
     public ArrayListStock(String nameLaptop, String nameTelefon, String nameMonitor, String nameKlavesnice, String nameMys) {
-        this.nameLaptop = nameLaptop;
-        this.nameTelefon = nameTelefon;
-        this.nameMonitor = nameMonitor;
-        this.nameKlavesnice = nameKlavesnice;
-        this.nameMys = nameMys;
+        this.laptop = nameLaptop;
+        this.telefon = nameTelefon;
+        this.monitor = nameMonitor;
+        this.klavesnice = nameKlavesnice;
+        this.mys = nameMys;
 
         this.stockLevels = new int[5];
     }
@@ -30,11 +30,11 @@ public class ArrayListStock {
     // Vrací seznam všech neprázdných produktů
     public List<String> getAllProducts() {
         List<String> produkty = new ArrayList<>();
-        if (nameLaptop != null) produkty.add(nameLaptop);
-        if (nameTelefon != null) produkty.add(nameTelefon);
-        if (nameMonitor != null) produkty.add(nameMonitor);
-        if (nameKlavesnice != null) produkty.add(nameKlavesnice);
-        if (nameMys != null) produkty.add(nameMys);
+        if (laptop != null) produkty.add(laptop);
+        if (telefon != null) produkty.add(telefon);
+        if (monitor != null) produkty.add(monitor);
+        if (klavesnice != null) produkty.add(klavesnice);
+        if (mys != null) produkty.add(mys);
         if (sluchatka != null) produkty.add(sluchatka);
         return produkty;
     }
@@ -80,7 +80,7 @@ public class ArrayListStock {
         }
         System.out.println("Produkt \"" + hledanyProdukt + "\" nebyl nalezen.");
     }
-// smaze produkt
+    // smaze produkt
     public static void removeProduct(List<ArrayListStock> stock, String smazanyProdukt) {
         for (int i = 0; i < stock.size(); i++) {
             ArrayListStock polozka = stock.get(i);
@@ -107,10 +107,8 @@ public class ArrayListStock {
         }
     }
 
-                @Override
-                public String toString () {
-                    return String.join(", ", getAllProducts());
-                }
-            }
-
-
+    @Override
+    public String toString () {
+        return String.join(", ", getAllProducts());
+    }
+}
