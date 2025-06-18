@@ -39,32 +39,16 @@ public class ArrayListStock {
         return produkty;
     }
 
-    //  Metoda updateStock podle indexu
-    public void updateStock(int index, int novyPocet) {
-        if (index < 0 || index >= stockLevels.length) {
-            System.out.println("Neplatný index: " + index);
-            return;
+    public static void vypisProduktySeZarazenim(List<ArrayListStock> stock) {
+        int pozice = 1;
+        for (ArrayListStock polozka : stock) {
+            List<String> produkty = polozka.getAllProducts();
+            for (String nazevProduktu : produkty) {
+                System.out.println("Produkt na pozici " + pozice + " je " + nazevProduktu);
+                pozice++;
+            }
         }
-
-        stockLevels[index] = novyPocet;
-        System.out.println("Aktualizován počet kusů na pozici " + index + " na " + novyPocet);
-
-        vypisStavSkladu();
     }
-
-    // Výpis stavu skladu
-    public void vypisStavSkladu() {
-        List<String> produkty = getAllProducts();
-        int soucet = 0;
-
-        System.out.println("Aktuální stav skladu:");
-        for (int i = 0; i < produkty.size(); i++) {
-            System.out.println(produkty.get(i) + ": " + stockLevels[i] + " kusů");
-            soucet += stockLevels[i];
-        }
-        System.out.println("Celkem kusů: " + soucet);
-    }
-
     // Vyhledá produkt podle názvu
     public static void findProduct(List<ArrayListStock> stock, String hledanyProdukt) {
         int pozice = 1;
@@ -80,6 +64,35 @@ public class ArrayListStock {
         }
         System.out.println("Produkt \"" + hledanyProdukt + "\" nebyl nalezen.");
     }
+
+
+    //  Metoda updateStock podle indexu
+    public void updateStock(int index, int novyPocet){
+                if (index < 0 || index >= stockLevels.length) {
+                    System.out.println("Neplatný index: " + index);
+                    return;
+                }
+
+        stockLevels[index] = novyPocet;
+        System.out.println("Aktualizován počet kusů na pozici " + index + " na " + novyPocet);
+
+        vypisStavSkladu(); // navazuje metoda vypisStavSkladu
+    }
+
+    // Výpis stavu skladu
+    public void vypisStavSkladu() {
+        List<String> produkty = getAllProducts();
+        int soucet = 0;
+
+        System.out.println("Aktuální stav skladu:");
+        for (int i = 0; i < produkty.size(); i++) {
+            System.out.println(produkty.get(i) + ": " + stockLevels[i] + " kusů");
+            soucet += stockLevels[i];
+        }
+        System.out.println("Celkem kusů: " + soucet);
+    }
+
+
     // smaze produkt
     public static void removeProduct(List<ArrayListStock> stock, String smazanyProdukt) {
         for (int i = 0; i < stock.size(); i++) {
@@ -90,25 +103,17 @@ public class ArrayListStock {
                     stock.remove(i);
                     System.out.println("Produkt \"" + smazanyProdukt + "\" byl odstraněn ze skladu.");
                     return;
+                 }
                 }
             }
-        }
-        System.out.println("Produkt \"" + smazanyProdukt + "\" se ve skladu nenachází.");
+            System.out.println("Produkt \"" + smazanyProdukt + "\" se ve skladu nenachází.");
 
-    }
-    public static void vypisProduktySeZarazenim(List<ArrayListStock> stock) {
-        int pozice = 1;
-        for (ArrayListStock polozka : stock) {
-            List<String> produkty = polozka.getAllProducts();
-            for (String nazevProduktu : produkty) {
-                System.out.println("Produkt na pozici " + pozice + " je " + nazevProduktu);
-                pozice++;
-            }
+
         }
-    }
+
 
     @Override
     public String toString () {
-        return String.join(", ", getAllProducts());
-    }
-}
+                return String.join(", ", getAllProducts());
+            }
+        }
