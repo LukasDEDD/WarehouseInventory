@@ -52,6 +52,23 @@ public class ArrayListStock {
         System.out.println("Produkt \"" + hledanyProdukt + "\" nebyl nalezen.");
     }
 
+        public static void removeProduct(List<ArrayListStock> stock, String smazanyProdukt) {
+            for (int i = 0; i < stock.size(); i++) {
+                ArrayListStock polozka = stock.get(i);
+                List<String> produkty = polozka.getAllProducts();
+
+                for (String produkt : produkty) {
+                    if (produkt.equalsIgnoreCase(smazanyProdukt)) {
+                        stock.remove(i);
+                        System.out.println("Produkt \"" + smazanyProdukt + "\" byl odstraněn ze skladu.");
+                        return; // odstraníme jen první výskyt
+                    }
+                }
+            }
+
+            System.out.println("Produkt \"" + smazanyProdukt + "\" se ve skladu nenachází.");
+        }
+
 
     @Override
     public String toString() {

@@ -27,7 +27,7 @@ public class Main {
                     pozice++;
                 }
 
-
+                ArrayListStock.removeProduct(stock, "monitor");
 
 
 
