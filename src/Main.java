@@ -13,7 +13,7 @@ public class Main {
         stock.add(productNames);
         stock.add(item);
 
-        System.out.println( productNames );
+        System.out.println(" Na sklade jsou tyto polozky : "+ stock );
 
 
     }

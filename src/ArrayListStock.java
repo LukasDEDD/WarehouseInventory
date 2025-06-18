@@ -40,15 +40,18 @@ public class ArrayListStock {
 
     @Override
     public String toString() {
-        return "ArrayListStock{" +
-                "nameLaptop='" + nameLaptop + '\'' +
-                ", nameTelefon='" + nameTelefon + '\'' +
-                ", nameMonitor='" + nameMonitor + '\'' +
-                ", nameKlavesnice='" + nameKlavesnice + '\'' +
-                ", nameMys='" + nameMys + '\'' +
-                ", Sluchatka='" + Sluchatka + '\'' +
-                '}';
+        List<String> parts = new ArrayList<>();
+
+        if (nameLaptop != null) parts.add(nameLaptop);
+        if (nameTelefon != null) parts.add(nameTelefon);
+        if (nameMonitor != null) parts.add(nameMonitor);
+        if (nameKlavesnice != null) parts.add(nameKlavesnice);
+        if (nameMys != null) parts.add(nameMys);
+        if (Sluchatka != null) parts.add(Sluchatka);
+
+        return String.join(", ", parts);
     }
+
 
     public ArrayListStock(String nameLaptop, String nameTelefon, String nameMonitor, String nameKlavesnice, String nameMys) {
         this.nameLaptop = nameLaptop;
