@@ -25,7 +25,9 @@ public class ArrayListStock {
     public ArrayListStock(String sluchatka) {
         this.sluchatka = sluchatka;
         this.stockLevels = new int[1];
-    }
+    } /* mam 2 konsturktory 1 pro productNames a 2. pro item ->
+        pouzivam promenou ArraylistStock, ktera absorbuje str + pole ->
+pote pracuji s obema hodnotami najednou*/
 
     // Vrací seznam všech neprázdných produktů
     public List<String> getAllProducts() {
