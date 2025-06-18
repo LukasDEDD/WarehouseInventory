@@ -13,25 +13,22 @@ public class Main {
         stock.add(productNames);
         stock.add(item);
 
-        vypisProduktySeZarazenim(stock);
+
+
+        //* Výpis produktů
+        ArrayListStock.vypisProduktySeZarazenim(stock );
+
+        // Vyhledání produktu
         ArrayListStock.findProduct(stock, "monitor");
 
-    }
+        //* Aktualizace počtu kusů
+        productNames.updateStock(2, 10);
 
-        public static void vypisProduktySeZarazenim (List < ArrayListStock > stock) {
-            int pozice = 1;
-            for (ArrayListStock polozka : stock) {
-                List<String> produkty = polozka.getAllProducts();
-                for (String produkt : produkty) {
-                    System.out.println("Produkt na pozici " + pozice + " je " + produkt);
-                    pozice++;
-                }
-
-                ArrayListStock.removeProduct(stock, "monitor");
+        // Odebrání produktu
+        ArrayListStock.removeProduct(stock, "monitor");
 
 
 
 
-            }
         }
     }
