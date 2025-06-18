@@ -20,6 +20,7 @@ public class ArrayListStock {
         this.mys = mys;
 
         this.stockLevels = new int[5];
+
     }
 
     public ArrayListStock(String sluchatka) {
@@ -29,7 +30,7 @@ public class ArrayListStock {
         pouzivam promenou ArraylistStock, ktera absorbuje str + pole ->
 pote pracuji s obema hodnotami najednou*/
 
-    // Vrací seznam všech neprázdných produktů
+    // Vrací seznam všech neprázdných produktů - bez null
     public List<String> getAllProducts() {
         List<String> produkty = new ArrayList<>();
         if (laptop != null) produkty.add(laptop);

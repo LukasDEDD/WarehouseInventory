@@ -4,10 +4,9 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
 
-        ArrayField s = new ArrayField();
-
         ArrayListStock productNames = new ArrayListStock("laptop", "telefon", "monitor", "klavesnice", "mys");
         ArrayListStock item = new ArrayListStock("sluchatka");
+
 
         List<ArrayListStock> stock = new ArrayList<>();
         stock.add(productNames);
