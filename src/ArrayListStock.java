@@ -94,7 +94,7 @@ pote pracuji s obema hodnotami najednou*/
         }
         System.out.println("Celkem kusů: " + soucet);
     }
-// nastaveni pro smazani
+// smazani v 1 sklade
     public boolean removeProductByName(String nazevProduktu) {
         List<String> produkty = getAllProducts();
         for (int i = 0; i < produkty.size(); i++) {
@@ -105,7 +105,7 @@ pote pracuji s obema hodnotami najednou*/
         }
         return false;
     }
-    // smaze produkt
+    // smaze produkt v sotatnich skladech
     public static void removeProduct(List<ArrayListStock> stock, String smazanyProdukt) {
         for (ArrayListStock polozka : stock) {
             boolean bylSmazan = polozka.removeProductByName(smazanyProdukt);
