@@ -94,26 +94,28 @@ pote pracuji s obema hodnotami najednou*/
         }
         System.out.println("Celkem kusů: " + soucet);
     }
-
-
+// nastaveni pro smazani
+    public boolean removeProductByName(String nazevProduktu) {
+        List<String> produkty = getAllProducts();
+        for (int i = 0; i < produkty.size(); i++) {
+            if (produkty.get(i).equalsIgnoreCase(nazevProduktu)) {
+                stockLevels[i] = 0;
+                return true;
+            }
+        }
+        return false;
+    }
     // smaze produkt
     public static void removeProduct(List<ArrayListStock> stock, String smazanyProdukt) {
-        for (int i = 0; i < stock.size(); i++) {
-            ArrayListStock polozka = stock.get(i);
-            List<String> produkty = polozka.getAllProducts();
-            for (String produkt : produkty) {
-                if (produkt.equalsIgnoreCase(smazanyProdukt)) {
-                    stock.remove(i);
-                    System.out.println("Produkt \"" + smazanyProdukt + "\" byl odstraněn ze skladu.");
-                    return;
-                 }
-                }
+        for (ArrayListStock polozka : stock) {
+            boolean bylSmazan = polozka.removeProductByName(smazanyProdukt);
+            if (bylSmazan) {
+                System.out.println("Produkt \"" + smazanyProdukt + "\" byl odstraněn ze skladu.");
+                return;
             }
-            System.out.println("Produkt \"" + smazanyProdukt + "\" se ve skladu nenachází.");
-
-
         }
-
+        System.out.println("Produkt \"" + smazanyProdukt + "\" se ve skladu nenachází.");
+    }
 
     @Override
     public String toString () {
